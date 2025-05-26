@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BIP Radio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="container px-0">
+    <!-- Barre d'information -->
+    <div class="bg-danger text-white py-2 px-3">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <!-- Icônes sociales -->
+        <div class="navbar-icons d-flex justify-content-center justify-content-md-end gap-2">
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+          <a href="#" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+          <a href="#" aria-label="Apple"><i class="fab fa-apple"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+        </div>
+        <!-- Boutons DIRECT et Volume en noir sur fond blanc -->
+        <div class="d-flex gap-2 mt-2 mt-md-0 align-items-center">
+          <!-- BOUTON DIRECT -->
+          <button id="btn-direct" class="btn btn-direct-volume" aria-label="Direct">
+            <i class="fas fa-play"></i> <span>DIRECT</span>
+          </button>
+
+          <!-- BOUTON VOLUME + SLIDER AU SURVOL -->
+          <div class="volume-control-wrapper position-relative d-inline-block">
+            <button id="btn-toggle-volume" class="btn btn-direct-volume" aria-label="Volume">
+              <i class="fas fa-volume-up"></i>
+            </button>
+            <div class="volume-slider-container">
+              <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="1"
+                     class="form-range volume-slider" style="width: 100px;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg bg-white sticky-top shadow-sm px-3">
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="assets/logosn1.svg" alt="BIP RADIO" width="60" />
+        </a>
+        <!-- Burger menu -->
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" style="color: #dc3545;"></span>
+        </button>
+        <!-- Menu et recherche -->
+        <div class="collapse navbar-collapse" id="menu">
+          <!-- Menu centré -->
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
+  <li class="nav-item">
+    <a class="nav-link fs-lg-5 fw-bold text-uppercase" href="#">À l'antenne</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link fs-lg-5 fw-bold text-uppercase" href="infos.html">Info</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link fs-lg-5 fw-bold text-uppercase" href="programmes.html">Programmes</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link fs-lg-5 fw-bold text-uppercase" href="podcasts.html">Podcasts</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link fs-lg-5 fw-bold text-uppercase" href="videos.html">Vidéos</a>
+  </li>
+  <!-- Sous-menu Emissions -->
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle fs-lg-5 fw-bold text-uppercase" href="derniers-episodes.html" id="emissionsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Émissions
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end text-uppercase shadow-sm" aria-labelledby="emissionsDropdown">
+      <li><a class="dropdown-item" href="derniers-episodes.html">Derniers épisodes</a></li>
+      <li><a class="dropdown-item" href="nos-emissions.html">Nos émissions</a></li>
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link fs-lg-5 fw-bold text-uppercase" href="a-propos.html">À propos</a>
+  </li>
+</ul>
+          <!-- Formulaire de recherche à droite -->
+          <form class="d-flex ms-lg-3 mt-3 mt-lg-0" role="search">
+            <input class="form-control form-control-sm me-2" type="search" placeholder="Recherche" aria-label="Search">
+            <button class="btn btn-black btn-sm btn-red" type="submit">Recherche</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Barre avec boutons -->
+    <div class="bg-light py-2 shadow-sm">
+      <div class="d-flex justify-content-center flex-nowrap overflow-auto gap-3">
+        <a href="#" class="btn btn-direct-volume-noborder p-2 d-flex align-items-center justify-content-center gap-1 btn-same-size" aria-label="Direct">
+          <span>DIRECT</span>
+        </a>
+        <a href="#" class="btn btn-direct-volume-noborder p-2 d-flex align-items-center justify-content-center gap-1 btn-same-size" aria-label="Fil Info">
+          <span>FIL INFO</span>
+        </a>
+        <a href="#" class="btn btn-direct-volume-noborder p-2 d-flex align-items-center justify-content-center gap-1 btn-same-size" aria-label="Actualités">
+          <span>ACTUALITES</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="text-center" style="background-color: #fff; padding-top: 0; padding-bottom: 0;">
+      <div class="container position-relative" style="height: 50vh;">
+        <div style="
+          position: absolute;
+          inset: 0;
+          background: url('https://i.ibb.co/zTXcrdhn/banierepod1.png') no-repeat center/cover;
+          opacity: 1;
+          z-index: 1;
+        "></div>
+        <div class="d-flex flex-column justify-content-center h-100 position-relative" style="z-index:2;">
+          <h1 class="display-4 fw-bold hero-title">DERNIERS PODCASTS</h1>
+          <p class="lead hero-subtitle">ÉCOUTER LES DERNIERS ÉPISODES DE NOS ÉMISSIONS</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <section class="py-5 bg-light">
+      <footer class="bg-dark text-white py-4">
+        <div class="container">
+          <div class="row text-center text-lg-start">
+            <div class="col-lg-4 mb-3">
+              <p class="small mb-0">© 2025 BIP RADIO. Tous droits réservés.</p>
+            </div>
+            <div class="col-lg-4 mb-3">
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white text-decoration-none">CONNEXION</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-4 mb-3">
+              <!-- Icônes sociales déplacées ici -->
+              <div class="navbar-icons d-flex justify-content-center justify-content-lg-start gap-2 mb-2">
+                <a href="#" aria-label="YouTube" class="text-white fs-4"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="TikTok" class="text-white fs-4"><i class="fab fa-tiktok"></i></a>
+                <a href="#" aria-label="Spotify" class="text-white fs-4"><i class="fab fa-spotify"></i></a>
+                <a href="#" aria-label="Apple" class="text-white fs-4"><i class="fab fa-apple"></i></a>
+                <a href="#" aria-label="Facebook" class="text-white fs-4"><i class="fab fa-facebook"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </section>
+  </div>
+   <!-- Lecteur audio en pied de page FIXE -->
+  <section class="audio-player-footer-section fixed-bottom w-100" style="z-index: 1050; pointer-events: auto; background: transparent;">
+    <div class="container px-0">
+      <div class="bg-danger text-white py-2 shadow">
+         <div class="d-flex align-items-center justify-content-between px-2">
+        
+        <!-- Groupe gauche -->
+        <div class="d-flex align-items-center gap-3">
+          <!-- Bouton Play -->
+          <button class="btn btn-link text-white fs-4 p-0 m-0 btn-direct-footer" aria-label="Play">
+            <i class="fas fa-play"></i>
+          </button>
+          <!-- Infos radio -->
+          <div class="d-none d-sm-block text-start">
+            <div class="fw-bold m-0">BIP Radio</div>
+            <div class="small text-white-50 m-0">L'information À Toute Heure</div>
+          </div>
+        </div>
+
+        <!-- Logo -->
+        <div class="d-none d-sm-block">
+          <img src="assets/logo.svg" alt="BIP Logo" height="50">
+        </div>
+
+        <!-- Contrôles -->
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-link text-white fs-5 p-0" aria-label="Précédent"><i class="fas fa-backward"></i></button>
+          <button class="btn btn-link text-white fs-5 p-0" aria-label="Suivant"><i class="fas fa-forward"></i></button>
+          <button class="btn btn-link text-white fs-5 p-0" aria-label="Clap"><i class="fas fa-radio"></i></button>
+        </div>
+
+        <!-- Timer -->
+        <div class="d-none d-sm-block small">
+          00:00
+        </div>
+
+        <!-- Bouton Playlist -->
+        <div>
+          <button class="btn btn-link text-white fs-5 p-0" aria-label="Playlist">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,133 @@
+<!-- 🌐 HEADER FIXE -->
+<header class="fixed top-0 w-full bg-white shadow z-50">
+  <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+    <img src="/logo-bip.svg" alt="BIP Radio" class="h-8">
+    <nav class="hidden md:flex space-x-6">
+      <a href="#" class="text-gray-700 hover:text-red-600">Accueil</a>
+      <a href="#" class="text-gray-700 hover:text-red-600">Actualités</a>
+      <a href="#" class="text-gray-700 hover:text-red-600">En Direct</a>
+      <a href="#" class="text-gray-700 hover:text-red-600">Podcasts</a>
+      <a href="#" class="text-gray-700 hover:text-red-600">Émissions</a>
+      <a href="#" class="text-gray-700 hover:text-red-600">À propos</a>
+    </nav>
+    <button class="bg-red-600 text-white px-4 py-2 rounded-full hover:bg-red-700">▶ Écouter en direct</button>
+  </div>
+</header>
+
+<!-- 🖼️ HERO BANNER -->
+<section class="relative h-[600px] bg-cover bg-center text-white" style="background-image: url('/hero.jpg');">
+  <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+  <div class="relative z-10 max-w-4xl mx-auto h-full flex flex-col justify-center items-center text-center px-4">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">L’actualité du Bénin, en direct</h1>
+    <p class="text-lg md:text-xl mb-6">Écoutez BIP Radio partout, tout le temps</p>
+    <button class="bg-red-600 hover:bg-red-700 px-6 py-3 rounded-full text-lg font-semibold">▶ Écouter maintenant</button>
+  </div>
+</section>
+
+<!-- 📰 DERNIÈRES ACTUS -->
+<section class="py-12 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-8">Dernières Actualités</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Card actu -->
+      <div class="bg-white rounded-lg shadow overflow-hidden">
+        <img src="/actu1.jpg" alt="Actu" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <span class="text-sm text-red-600 font-medium">Société</span>
+          <h3 class="text-lg font-semibold mt-2 mb-2">Titre de l’actualité</h3>
+          <p class="text-sm text-gray-600 mb-4">Résumé rapide de l’article ici. Deux lignes max.</p>
+          <a href="#" class="text-red-600 font-semibold">Lire plus →</a>
+        </div>
+      </div>
+      <!-- Dupliquer ce bloc pour plus d’actus -->
+    </div>
+  </div>
+</section>
+
+<!-- 🎧 PODCASTS / REPLAYS -->
+<section class="py-12 bg-white">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-8">Podcasts récents</h2>
+    <div class="flex space-x-4 overflow-x-auto">
+      <div class="min-w-[250px] bg-gray-100 rounded-lg p-4">
+        <img src="/podcast1.jpg" alt="Podcast" class="w-full h-32 object-cover rounded">
+        <h3 class="mt-2 font-semibold text-gray-800">Titre Podcast</h3>
+        <p class="text-sm text-gray-500">Durée : 15 min</p>
+        <button class="mt-2 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">▶ Écouter</button>
+      </div>
+      <!-- Dupliquer pour d'autres podcasts -->
+    </div>
+  </div>
+</section>
+
+<!-- 📻 ÉMISSIONS -->
+<section class="py-12 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-8">Émissions phares</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-4 rounded-lg shadow">
+        <img src="/animateur.jpg" alt="Animateur" class="w-20 h-20 object-cover rounded-full mb-4">
+        <h3 class="font-semibold text-xl">Nom de l’émission</h3>
+        <p class="text-sm text-gray-500">Avec Prénom Nom – Lundi à 18h</p>
+        <a href="#" class="mt-2 inline-block text-red-600 font-semibold">Découvrir →</a>
+      </div>
+      <!-- Plus d’émissions -->
+    </div>
+  </div>
+</section>
+
+<!-- 🛑 EN DIRECT / LIVE NEWS BUILDER -->
+<section class="py-12 bg-white">
+  <div class="max-w-3xl mx-auto px-4">
+    <h2 class="text-2xl font-bold mb-6">En Direct</h2>
+    <ul class="space-y-4 border-l-2 border-red-600 pl-4">
+      <li>
+        <div class="flex items-start gap-2">
+          <span class="text-red-600 font-bold">14:03</span>
+          <p class="text-gray-700">Le ministre a annoncé de nouvelles mesures sanitaires.</p>
+        </div>
+      </li>
+      <!-- Autres entrées -->
+    </ul>
+  </div>
+</section>
+
+<!-- ✉️ NEWSLETTER + SOCIAL -->
+<section class="py-12 bg-gray-100">
+  <div class="max-w-7xl mx-auto px-4 text-center">
+    <h2 class="text-2xl font-bold mb-4">Restez informé(e)</h2>
+    <p class="mb-4 text-gray-600">Inscrivez-vous à notre newsletter</p>
+    <form class="flex flex-col md:flex-row justify-center items-center gap-4">
+      <input type="email" placeholder="Votre email" class="px-4 py-2 rounded-full border border-gray-300 w-64">
+      <button class="bg-red-600 text-white px-6 py-2 rounded-full hover:bg-red-700">S’inscrire</button>
+    </form>
+    <div class="mt-6 space-x-4">
+      <a href="#"><img src="/facebook.svg" alt="Facebook" class="inline h-6"></a>
+      <a href="#"><img src="/twitter.svg" alt="Twitter" class="inline h-6"></a>
+      <a href="#"><img src="/youtube.svg" alt="YouTube" class="inline h-6"></a>
+    </div>
+  </div>
+</section>
+
+<!-- 📄 FOOTER -->
+<footer class="bg-black text-white py-10">
+  <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-3 gap-8">
+    <div>
+      <h3 class="font-bold mb-2">BIP Radio</h3>
+      <p class="text-sm">L’actualité du Bénin, 24h/24 sur BIP Radio.</p>
+    </div>
+    <div>
+      <h3 class="font-bold mb-2">Menu</h3>
+      <ul class="space-y-1 text-sm">
+        <li><a href="#" class="hover:underline">Mentions légales</a></li>
+        <li><a href="#" class="hover:underline">Politique de confidentialité</a></li>
+        <li><a href="#" class="hover:underline">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="font-bold mb-2">Adresse</h3>
+      <p class="text-sm">Cotonou, Bénin<br>Email : contact@bipradio.com</p>
+    </div>
+  </div>
+  <div class="text-center mt-8 text-sm text-gray-400">© 2025 BIP Radio. Tous droits réservés.</div>
+</footer>
